@@ -1,0 +1,58 @@
+plugins {
+    id 'java'
+}
+
+group 'com.saucedemo.test'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    // https://mvnrepository.com/artifact/net.serenity-bdd/serenity-core
+    implementation group: 'net.serenity-bdd', name: 'serenity-core', version: '3.4.3'
+
+    // https://mvnrepository.com/artifact/net.serenity-bdd/serenity-junit
+    implementation group: 'net.serenity-bdd', name: 'serenity-junit', version: '3.4.3'
+
+    // https://mvnrepository.com/artifact/net.serenity-bdd/serenity-cucumber
+    testImplementation group: 'net.serenity-bdd', name: 'serenity-cucumber', version: '3.4.3'
+
+    // https://mvnrepository.com/artifact/junit/junit
+    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.19.0'
+
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.5'
+
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.5'
+
+    // https://mvnrepository.com/artifact/net.serenity-bdd/serenity-screenplay
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay', version: '3.5.1'
+
+    // https://mvnrepository.com/artifact/net.serenity-bdd/serenity-screenplay-webdriver
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-webdriver', version: '3.5.1'
+
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '4.7.2'
+
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.7.2'
+
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-remote-driver', version: '4.7.2'
+
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
