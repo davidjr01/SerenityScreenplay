@@ -2,7 +2,8 @@ package starter.userinterfaces;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
+import org.openqa.selenium.By;
 
 public class PageHome extends PageObject {
-    public static final Target TituloV=Target.the("Titulo de la pagina para validacion").locatedBy("//span[@class='title']");
+    public static By TituloV= By.xpath("//span[@class='title']");
 }

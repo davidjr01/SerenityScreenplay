@@ -13,11 +13,12 @@ import static starter.userinterfaces.LoginPage.*;
 
 public class LoginTask implements Task {
 
-    private String usuario, password;
+    private String usuario, password,titulo;
     public  LoginTask(String usuario, String password) {
         this.usuario = usuario;
         this.password = password;
     }
+
 
     @Override
     public <T extends Actor> void performAs(T actor) {
