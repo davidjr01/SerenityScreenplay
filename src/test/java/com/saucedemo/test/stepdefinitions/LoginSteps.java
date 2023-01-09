@@ -1,11 +1,9 @@
-package stepdefinitions;
+package com.saucedemo.test.stepdefinitions;
 
-import Config.SetTheStage;
+import com.saucedemo.test.Config.SetTheStage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Open;
 import org.openqa.selenium.WebDriver;
 import starter.questions.ValidacionHomePage;
@@ -13,7 +11,6 @@ import starter.tasks.LoginTask;
 import starter.userinterfaces.LoginPage;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.actions.Hit.the;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.equalTo;

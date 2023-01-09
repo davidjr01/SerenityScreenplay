@@ -1,4 +1,4 @@
-package Config;
+package com.saucedemo.test.Config;
 
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;

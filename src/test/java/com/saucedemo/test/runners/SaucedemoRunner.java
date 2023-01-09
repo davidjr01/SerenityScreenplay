@@ -1,4 +1,4 @@
-package runners;
+package com.saucedemo.test.runners;
 
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
         features = "src/test/resources/features/EjemploScreenPlay.feature",
-        glue = "stepdefinitions",
+        glue = "com.saucedemo.test",
         tags="",
         snippets=CucumberOptions.SnippetType.CAMELCASE
 
