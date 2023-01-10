@@ -17,8 +17,6 @@ import static org.hamcrest.Matchers.equalTo;
 
 
 public class LoginSteps {
-    private WebDriver navegador;
-    //private Actor actor= Actor.named("David");
     private LoginPage loginPage=new LoginPage();
     private SetTheStage sets=new SetTheStage();
 

@@ -27,6 +27,8 @@ public class LoginTask implements Task {
                 Enter.theValue(password).into(ImputPassword),
                 Click.on(BotonLogin)
         );
+
+
     }
 
     public static LoginTask IngresarCredenciales(String usuario, String password) {
