@@ -6,6 +6,12 @@ Feature: iniciar sesion en la aplicacion de saucedemo
 
   @FiltroPorPrecio
   Scenario:Filtrar los productos por orden de precio
-    Given que el usuario de click a la seccion de filtracion
-    When  filtrar busqueda por precio "LowPrice"
-    Then  Validamos que se haya filtrado de forma correcta "True"
+    Given el da click a la seccion de filtracion
+    When  el filtra la busqueda por precio "LowPrice"
+    Then  valida que se haya filtrado de forma correcta "True"
+
+  @FiltroPorOrdenAlfabetico
+  Scenario:Filtrar los productos por orden alfabetica
+    Given el da click a la seccion de filtracion
+    When  filtra busqueda por nombre de producto  "Name(ZtoA)"
+    Then  Valida que se haya filtrado de forma alfabetica "True"

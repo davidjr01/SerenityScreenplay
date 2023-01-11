@@ -10,6 +10,9 @@ public class PageHome extends PageObject {
     public static By TituloV= By.xpath("//span[@class='title']");
     public static final Target sel2=Target.the("Seleccion de filtros").locatedBy("//select[@class='product_sort_container']");
     public static final Target PrecioProductos=Target.the("lista de  precio de Prodcutos").locatedBy("//div[@class='inventory_item_price']");
+    public static final Target TitulosProductos=Target.the("lista de  precio de Prodcutos").locatedBy("//div[@class='inventory_item_name']");
+
+
 
 
 }

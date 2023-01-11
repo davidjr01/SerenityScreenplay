@@ -4,16 +4,20 @@ import com.saucedemo.test.Config.SetTheStage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import starter.questions.ValidacionFiltroPrice;
+import starter.questions.ValidacionHomePage;
 import starter.tasks.FiltrarTask;
 import starter.tasks.LoginTask;
 import starter.tasks.SeleccionTask;
 
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static org.hamcrest.Matchers.equalTo;
+
 
 public class HomeSteps {
     private SetTheStage sets=new SetTheStage();
-    @Given("que el usuario de click a la seccion de filtracion")
+    @Given("el da click a la seccion de filtracion")
     public void queElUsuarioDeClickALaSeccionDeFiltracion() {
         //sets.setTheStage();
         /*/theActorCalled("david").wasAbleTo(
@@ -24,16 +28,18 @@ public class HomeSteps {
         );
 
     }
-    @When("filtrar busqueda por precio {string}")
+    @When("el filtra la busqueda por precio {string}")
     public void filtrarBusquedaPorPrecio(String Valor) {
         theActorInTheSpotlight().wasAbleTo(
                 FiltrarTask.FiltracionPor(Valor)
         );
 
     }
-    @Then("Validamos que se haya filtrado de forma correcta {string}")
-    public void validamosQueSeHayaFiltradoDeFormaCorrecta(String string) {
-
+    @Then("valida que se haya filtrado de forma correcta {string}")
+    public void validamosQueSeHayaFiltradoDeFormaCorrecta(String valor) {
+        theActorInTheSpotlight().should(
+                seeThat("validacion filtro", ValidacionFiltroPrice.Value(),equalTo(valor))
+        );
     }
 
 }
