@@ -11,31 +11,28 @@ import starter.tasks.LoginTask;
 import starter.tasks.SeleccionTask;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.equalTo;
 
 
 public class HomeSteps {
     private SetTheStage sets=new SetTheStage();
-    @Given("el da click a la seccion de filtracion")
+    @Given("el usuraio da click a la seccion de filtracion")
     public void queElUsuarioDeClickALaSeccionDeFiltracion() {
-        //sets.setTheStage();
-        /*/theActorCalled("david").wasAbleTo(
-                SeleccionTask.Filtracion()
-        ); */
-        theActorInTheSpotlight().wasAbleTo(
+        sets.setTheStage();
+        theActorCalled("david").wasAbleTo(
                 SeleccionTask.Filtracion()
         );
-
     }
-    @When("el filtra la busqueda por precio {string}")
+    @When("el usuario filtra la busqueda por precio {string}")
     public void filtrarBusquedaPorPrecio(String Valor) {
-        theActorInTheSpotlight().wasAbleTo(
+        theActorInTheSpotlight().attemptsTo(
                 FiltrarTask.FiltracionPor(Valor)
         );
 
     }
-    @Then("valida que se haya filtrado de forma correcta {string}")
+    @Then("el usuario valida que se haya filtrado de forma correcta {string}")
     public void validamosQueSeHayaFiltradoDeFormaCorrecta(String valor) {
         theActorInTheSpotlight().should(
                 seeThat("validacion filtro", ValidacionFiltroPrice.Value(),equalTo(valor))

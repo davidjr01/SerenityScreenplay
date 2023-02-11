@@ -20,21 +20,21 @@ public class LoginSteps {
     private LoginPage loginPage=new LoginPage();
     private SetTheStage sets=new SetTheStage();
 
-    @Given("que el usuario ingrese a la pagina web")
+    @Given("el usuario ingrese a la pagina web")
     public void queElUsuarioIngreseALaPaginaWeb() {
         sets.setTheStage();
         theActorCalled("david").wasAbleTo(Open.browserOn(loginPage));
 
     }
 
-    @When("el se logea con las credenciales {string} {string}")
+    @When("el usuario se logea con las credenciales {string} {string}")
     public void elSeLogeaConLasCredenciales(String usuario, String password) {
-        theActorInTheSpotlight().wasAbleTo(
+        theActorInTheSpotlight().attemptsTo(
                 LoginTask.IngresarCredenciales(usuario,password)
         );
 
     }
-    @Then("el valida  en la pagina principal {string}")
+    @Then("se valida  en la pagina principal {string}")
     public void elValidaEnLaPaginaPrincipal(String titulo) {
         theActorInTheSpotlight().should(
                 seeThat("El titululo", ValidacionHomePage.Value(),equalTo(titulo))
